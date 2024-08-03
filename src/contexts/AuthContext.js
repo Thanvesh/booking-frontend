@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { jwtDecode } from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode'; // Importing jwtDecode
 import api from '../api';
 
 const AuthContext = createContext();
@@ -52,29 +52,28 @@ export const AuthProvider = ({ children }) => {
   }, [fetchProperties, fetchFavorites]);
 
   const onFilters = (filters) => {
-    console.log(filters);
     setFilters(prevFilters => {
       const newFilters = { ...prevFilters, ...filters };
-  
+
       const updatedFilteredProperties = originalProperties.filter(property => {
         let matches = true;
-  
+
         if (newFilters.priceRange) {
           const [minPrice, maxPrice] = newFilters.priceRange;
           const price = property.pricePerNight;
           if ((maxPrice && price > maxPrice) || price < minPrice) matches = false;
         }
-  
+
         if (newFilters.location) {
           const location = newFilters.location.toLowerCase();
           if (property.location.toLowerCase().indexOf(location) === -1) {
             matches = false;
           }
         }
-  
+
         if (newFilters.bedrooms) {
           const bedroomFilters = newFilters.bedrooms;
-  
+
           if (
             (bedroomFilters.single && property.rooms.single < bedroomFilters.single) ||
             (bedroomFilters.double && property.rooms.double < bedroomFilters.double) ||
@@ -83,10 +82,10 @@ export const AuthProvider = ({ children }) => {
             matches = false;
           }
         }
-  
+
         return matches;
       });
-  
+
       setFilteredProperties(updatedFilteredProperties);
       return newFilters;
     });
@@ -119,14 +118,11 @@ export const AuthProvider = ({ children }) => {
     navigate('/login');
   };
 
-  // Booking Modal Functions
-
-
   return (
     <AuthContext.Provider value={{
       isAuthenticated, isAdmin, userId, properties: filteredProperties,
       fetchProperties, clearFilters, favorites, setFavorites, fetchFavorites,
-      login, logout, onFilters,originalProperties,
+      login, logout, onFilters, originalProperties, filters, // Make sure filters are provided if needed
     }}>
       {children}
     </AuthContext.Provider>

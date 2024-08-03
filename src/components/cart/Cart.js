@@ -73,7 +73,7 @@ const Cart = () => {
         setTotalCost((prevTotalCost) => prevTotalCost + totalPrice);
       } else {
         newSelected.delete(id);
-        const { [id]: removedPrice, ...rest } = updatedPrices;
+        const { [id]: removedPrice} = updatedPrices;
         setTotalCost((prevTotalCost) => prevTotalCost - (removedPrice || 0));
         updatedPrices[id] = undefined; // Remove item price
       }
