@@ -1,0 +1,27 @@
+/* src/components/auth/Login.css */
+
+.error-message {
+    animation: fadeInOut 4s ease-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Ensure this class targets the invalid state properly */
+.invalid-email {
+    border-color: red;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+  }
+.form-control.is-invalid {
+    border-color: #dc3545 !important; /* Add !important to ensure it overrides Bootstrap's default */
+    padding-right: calc(1.5em + 0.75rem);
+}
+
+/* Show the error feedback text properly */
+.form-control.is-invalid ~ .invalid-feedback {
+    display: block;
+}

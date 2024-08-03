@@ -1,0 +1,91 @@
+/* PropertyCard.css */
+
+.property-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.property-card:hover {
+  transform: scale(1.02);
+}
+
+.property-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.property-card .card-location {
+  color: #777;
+}
+
+.property-card .card-description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.property-card .card-rooms,
+.property-card .card-prices,
+.property-card .card-status {
+  font-size: 0.9rem;
+}
+
+.property-card .card-prices {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.property-card .card-status {
+  color: #333;
+  font-weight: bold;
+}
+
+.property-card .carousel-item img {
+  object-fit: cover;
+  height: 180px; /* Adjust height as needed */
+}
+
+.property-card .d-flex {
+  margin-top: 1rem;
+}
+
+.property-card .d-flex .btn {
+  flex: 1;
+}
+
+.property-card .btn-outline-primary {
+  margin-right: 0.5rem;
+}
+
+.property-card .btn-outline-danger {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .property-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .property-card .card-title {
+    font-size: 1rem;
+  }
+
+  .property-card .card-description {
+    font-size: 0.8rem;
+  }
+
+  .property-card .card-rooms,
+  .property-card .card-prices,
+  .property-card .card-status {
+    font-size: 0.8rem;
+  }
+
+  .property-card .carousel-item img {
+    height: 150px; /* Adjust height for smaller screens */
+  }
+}

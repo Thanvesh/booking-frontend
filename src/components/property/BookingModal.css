@@ -1,0 +1,3 @@
+.modal-backdrop {
+    --bs-backdrop-bg: rgba(93, 86, 86, 0.29) !important; /* Change color and opacity here */
+  }
