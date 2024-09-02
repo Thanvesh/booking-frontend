@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://bookingserver-19k4.onrender.com/api',
+  baseURL: 'https://bookingserver-1.onrender.com',
 });
 
 export default api;
